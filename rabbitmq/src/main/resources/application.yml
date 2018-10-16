@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+
+#################\u6109\u9605\u6D4B\u8BD5\u673A rabbitmq\u5730\u5740####################
+spring:
+  rabbitmq:
+    host: 116.62.41.20
+    port: 5672
+    username: daikai
+    password: dk123456
+
