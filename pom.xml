@@ -16,6 +16,7 @@
         <module>redis</module>
         <module>multisource</module>
         <module>lombok</module>
+        <module>websocket</module>
     </modules>
 
     <parent>

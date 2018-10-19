@@ -10,3 +10,5 @@
 >multisource: springboot jpa多数据源配置
 
 >lombok: springboot lombok简化代码
+
+>websocket: springboot 集成websocket

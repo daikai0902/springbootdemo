@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>聊天室</title>
+</head>
+<body>
+<button id="connect1">戴凯链接</button>
+<button id="connect2">朱禁链接</button>
+<input type="text" id="msg"/>
+<button id="send">send</button>
+<div>消息<div id="msgs1"></div></div>
+</body>
+<script type="text/javascript">
+    document.getElementById('connect1').onclick=function() {
+        var websocket = null;
+        if ('WebSocket' in window) {
+            websocket = new WebSocket('ws://localhost:8090/webSocket/戴凯');
+        } else {
+            alert('该浏览器不支持websocket');
+        }
+
+        websocket.onopen = function (e) {
+            console.log('websocket建立连接');
+        }
+        websocket.onclose = function (e) {
+            console.log('websocket关闭连接');
+        }
+        websocket.onmessage = function (e) {
+            console.log('websocket收到消息:' + e.data);
+            document.getElementById('msgs1').innerHTML = document.getElementById('msgs1').innerHTML + '<br/>' + e.data;
+        }
+        websocket.onerror = function (event) {
+            console.log('websocket通信发生错误');
+
+        }
+        window.onbeforeunload = function (event) {
+            websocket.close();
+        }
+        document.getElementById('send').onclick = function () {
+            var msg = document.getElementById('msg').value;
+            websocket.send(msg);
+        }
+    }
+
+
+    document.getElementById('connect2').onclick=function() {
+        var websocket = null;
+        if ('WebSocket' in window) {
+            websocket = new WebSocket('ws://localhost:8090/webSocket/朱禁');
+        } else {
+            alert('该浏览器不支持websocket');
+        }
+
+        websocket.onopen = function (e) {
+            console.log('websocket建立连接');
+        }
+        websocket.onclose = function (e) {
+            console.log('websocket关闭连接');
+        }
+        websocket.onmessage = function (e) {
+            console.log('websocket收到消息:' + e.data);
+            document.getElementById('msgs1').innerHTML = document.getElementById('msgs1').innerHTML + '<br/>' + e.data;
+        }
+        websocket.onerror = function (event) {
+            console.log('websocket通信发生错误');
+
+        }
+        window.onbeforeunload = function (event) {
+            websocket.close();
+        }
+        document.getElementById('send').onclick = function () {
+            var msg = document.getElementById('msg').value;
+            websocket.send(msg);
+        }
+    }
+</script>
+</html>
