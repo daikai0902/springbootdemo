@@ -17,6 +17,7 @@
         <module>multisource</module>
         <module>lombok</module>
         <module>websocket</module>
+        <module>shiro</module>
     </modules>
 
     <parent>
@@ -38,6 +39,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
     </dependencies>
 

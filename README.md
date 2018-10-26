@@ -12,3 +12,5 @@
 >lombok: springboot lombok简化代码
 
 >websocket: springboot 集成websocket
+
+>shiro: springboot 集成shiro框架
